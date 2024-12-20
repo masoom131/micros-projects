@@ -1,0 +1,24 @@
+server:
+  port: 8081
+
+spring:
+  main:
+    banner-mode: "off"
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/micro-dbs
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  config:
+    import: optional:configserver:http://localhost:8085
+
+  #profiles:
+    #active: dev
+  #profiles:
+    #active: prod

@@ -1,0 +1,24 @@
+server:
+  port: 8085
+
+spring:
+  main:
+    banner-mode: "off"
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          default-label: master
+          uri: https://github.com/masoom131/micro-projects
+          clone-on-start: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:9090/eureka
